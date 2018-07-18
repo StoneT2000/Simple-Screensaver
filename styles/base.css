@@ -1,0 +1,126 @@
+/* CSS for headers and footers*/
+body, html{
+  color:RGB(30,30,30);
+  margin:0;
+  padding:0;
+  position: relative;
+  box-sizing: border-box;
+  font-weight: 400;
+  height: 100%;
+  transition: background-color 1s;
+  background-color:#fde74c;
+  /*cursor:none;*/
+  z-index:0;
+}
+.page{
+  height:100%;
+  transition: background-color 1s;
+  width:100%;
+  z-index:1;
+  position: fixed;
+}
+button{
+  border:none;
+}
+button:focus {outline:0;}
+.footer{
+  position: fixed;
+  width:100%;
+  height: 30px;
+  bottom: 0px;
+  margin-left:20px;
+  margin:none;
+  z-index:5;
+  text-align: left;
+  color:RGB(50,50,50);
+  transition: transform 1s;
+  transform: translate(0,30px)
+}
+.footer a{
+  color: RGB(50,50,50);
+  font-size: 20px;
+  margin-left: 5px;
+}
+.footer h6{
+  display: inline-block;
+  line-height: 12px;
+  margin-bottom: 0px;
+  margin-top:0px;
+  font-size: 12px;
+  font-weight: 300;
+  transform: translate(0,-3px);
+}
+.footer a:hover{
+  border-radius: 50%;
+  color: black;
+}
+.pfooter {
+  position: fixed;
+  width: 100%;
+  height:100px;
+  z-index: 10;
+  bottom: 0px;
+}
+
+#options{
+  text-align: center;
+  width:100px;
+  font-weight: 400;
+  left:50%;
+  margin-left:-50px;
+  bottom:0;
+  position: fixed;
+  border: 2px dashed RGBA(50,50,50,0);
+  color: RGBA(50,50,50,0);
+  transition: border 1s, color 1s;
+}
+
+#options:hover{
+  cursor:pointer;
+  
+}
+#optionsPage {
+  top:50%;
+  height: 100px;
+  margin-top:-50px;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  
+}
+#optionsPage h4{
+  color: RGBA(255,255,255,0);
+  width: 200px;
+  line-height: 50px;
+  font-size: 30px;
+  display: inline-block;
+  text-align: center;
+  border:2px dashed RGBA(255,255,255,0);
+  padding: 10px;
+  margin:10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  cursor:pointer;
+  
+  transition: background-color 1s, color 1s, border, 1s;
+
+  
+}
+#rangeDisplay {
+  opacity: 0;
+  transition: opacity 1s;
+}
+.dispC{
+  height:100%;
+  z-index:1;
+  position: fixed;
+  width: 25%;
+  display:inline-block;
+  margin:0;
+  padding:0;
+  transition: background-color 1s;
+  
+}
+#optionsPage h4:hover{
+
+}
