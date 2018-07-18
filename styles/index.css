@@ -4,12 +4,6 @@ body {
 .container{
 
 }
-
-path{
-  fill:RGBA(255,255,255,0);
-  stroke:RGBA(255,255,255,0);
-  transition: fill 1s, stroke 1s;
-}
 * {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */

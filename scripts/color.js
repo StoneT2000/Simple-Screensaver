@@ -107,8 +107,9 @@ $(document).on("ready",function(){
       $("#optionsPage h4").css("border","2px dashed RGBA(255,255,255,1)");
       $("#optionsPage h4").css("color","RGBA(255,255,255,1)");
       $("#optionsPage").css("z-index","10");
-      $("path").css("fill","RGBA(255,255,255,1)")
-      $("path").css("stroke","RGBA(255,255,255,1)")
+      
+      $("#optionsPage h4 img").css("opacity","1");
+      
       clearTimeout(timer);
       window.setTimeout(function(){
         
@@ -116,11 +117,9 @@ $(document).on("ready",function(){
     }
     else {
       tst = false;
-      
+      $("#optionsPage h4 img").css("opacity","0");
       $("#optionsPage h4").css("border","2px dashed RGBA(255,255,255,0)");
       $("#optionsPage h4").css("color","RGBA(255,255,255,0)");
-      $("path").css("fill","RGBA(255,255,255,0)")
-      $("path").css("stroke","RGBA(255,255,255,0)")
       clearTimeout(timer);
       timer = window.setTimeout(function(){
         $("#optionsPage").css("z-index","0");

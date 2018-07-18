@@ -109,6 +109,9 @@ button:focus {outline:0;}
   display: inline-block;
   
 }
+#optionsPage h4 img{
+  transition: opacity 1s;
+}
 #rangeDisplay {
   opacity: 0;
   transition: opacity 1s;
