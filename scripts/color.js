@@ -99,7 +99,7 @@ $(document).on("ready",function(){
     }
   );
   var tst = false;
-
+  var timer;
   $("#options").on("click",function(){
     if (tst == false){
       tst = true;
@@ -107,6 +107,9 @@ $(document).on("ready",function(){
       $("#optionsPage h4").css("border","2px dashed RGBA(255,255,255,1)");
       $("#optionsPage h4").css("color","RGBA(255,255,255,1)");
       $("#optionsPage").css("z-index","10");
+      $("path").css("fill","RGBA(255,255,255,1)")
+      $("path").css("stroke","RGBA(255,255,255,1)")
+      clearTimeout(timer);
       window.setTimeout(function(){
         
       }, 1000);
@@ -116,12 +119,15 @@ $(document).on("ready",function(){
       
       $("#optionsPage h4").css("border","2px dashed RGBA(255,255,255,0)");
       $("#optionsPage h4").css("color","RGBA(255,255,255,0)");
-
-      window.setTimeout(function(){
+      $("path").css("fill","RGBA(255,255,255,0)")
+      $("path").css("stroke","RGBA(255,255,255,0)")
+      clearTimeout(timer);
+      timer = window.setTimeout(function(){
         $("#optionsPage").css("z-index","0");
       }, 1000);
     }
-  })
+  });
+  
 });
 function keyEvent(){
   $(".page").css("background-color",colors[selectedIndex][Math.round(Math.random(0,1) * colors[selectedIndex].length)]);
