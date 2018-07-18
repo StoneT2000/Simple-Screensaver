@@ -81,8 +81,7 @@ button:focus {outline:0;}
 }
 #optionsPage {
   top:50%;
-  height: 100px;
-  margin-top:-50px;
+  transform: translate(0,-50%);
   position: fixed;
   width: 100%;
   text-align: center;
@@ -97,13 +96,17 @@ button:focus {outline:0;}
   text-align: center;
   border:2px dashed RGBA(255,255,255,0);
   padding: 10px;
-  margin:10px;
   margin-left: 20px;
   margin-right: 20px;
   cursor:pointer;
   
   transition: background-color 1s, color 1s, border, 1s;
 
+  
+}
+#optionsPage h4 i{
+  font-size:40px;
+  display: inline-block;
   
 }
 #rangeDisplay {
@@ -123,4 +126,23 @@ button:focus {outline:0;}
 }
 #optionsPage h4:hover{
 
+}
+
+@media only screen and (max-width: 972px){
+  #optionsPage{
+    width: 60%;
+    margin-left:20%;
+  }
+}
+/* For when the options button intersects footer*/
+@media only screen and (max-width: 620px){
+  #options{
+    bottom:30px;
+  }
+}
+@media only screen and (max-width: 400px){
+  #optionsPage{
+    width: 100%;
+    margin:0px;
+  }
 }

@@ -1,17 +1,20 @@
-  var c = ["orange", "#E3D985", "#BCD8C1"];
-  var winterc = ["#ffffff","#cdced3","#c9c8bd","#bf874c","#669297","#1b3338","#151a1d"];
-  var springc = ["#147f73","#60b520","#c7f473","#edff7a","#ffbb32","#d32c13"];
-  var fallc = ["#aba7a5","#f0c866","#c66632","#cc5500","#82291a","#3b3923","#111520"];
-  var summerc = ["#fde74c","#ffbb32",  "#fa7921", "#f93416","#ff1654","#f3ffbd","#b2dbbf","#247ba0"];
-  var colors = [c,springc,summerc,fallc,winterc];
-  var selectedIndex = 2;
-  function clearDisplayColors(colorArray){
-      console.log("clear")
-      for (var i = 1;i <= colorArray.length;i++){
-        $("#color" + i).css("background-color","RGB(0,0,0,0)");
-      }
-    $("#rangeDisplay").css("opacity","0");
+//For color choices, having 8 colors tends to have some improper displays when using displayRange
+var c = ["orange", "#E3D985", "#BCD8C1"];
+var winterc = ["#ffffff","#cdced3","#c9c8bd","#bf874c","#669297","#1b3338","#151a1d"];
+var springc = ["#147f73","#60b520","#c7f473","#edff7a","#ffbb32","#d32c13"];
+var fallc = ["#aba7a5","#f0c866","#c66632","#cc5500","#82291a","#3b3923","#111520"];
+var summerc = ["#fde74c","#ffbb32",  "#fa7921", "#f93416","#ff1654","#f3ffbd","#b2dbbf","#247ba0","#06d6a0"];
+var colors = [c,springc,summerc,fallc,winterc];
+var selectedIndex = 2;
+
+
+function clearDisplayColors(colorArray){
+    console.log("clear")
+    for (var i = 1;i <= colorArray.length;i++){
+      $("#color" + i).css("background-color","RGB(0,0,0,0)");
     }
+  $("#rangeDisplay").css("opacity","0");
+  }
 $(document).on("ready",function(){
   //Colors to be selected
   
