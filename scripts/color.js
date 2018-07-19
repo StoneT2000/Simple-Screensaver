@@ -14,13 +14,14 @@ function clearDisplayColors(colorArray){
       $("#color" + i).css("background-color","RGB(0,0,0,0)");
     }
   $("#rangeDisplay").css("opacity","0");
-  }
+}
 $(document).on("ready",function(){
   //Colors to be selected
   
   function randomColor(){
     $(".page").css("background-color",colors[selectedIndex][Math.round(Math.random(0,1) * colors[selectedIndex].length)]);
   }
+  randomColor();
   
   //Delete old div and append new one with new colors
   function displayRange(colorArray){
