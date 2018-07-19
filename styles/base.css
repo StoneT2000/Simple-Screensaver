@@ -131,11 +131,23 @@ button:focus {outline:0;}
 
 }
 
+#fall{
+  transform:translate(0,-7px);
+}
+
 @media only screen and (max-width: 972px){
   #optionsPage{
     width: 60%;
     margin-left:20%;
   }
+  
+}
+/*Fix placement of fall icon that keeps causing issues with placement*/
+@media only screen and (max-width: 806px){
+  #fall{
+    transform:translate(0,0);
+  }
+  
 }
 /* For when the options button intersects footer*/
 @media only screen and (max-width: 620px){
@@ -148,4 +160,5 @@ button:focus {outline:0;}
     width: 100%;
     margin:0px;
   }
+  
 }
