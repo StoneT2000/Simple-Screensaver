@@ -110,6 +110,7 @@ button:focus {outline:0;}
   
 }
 #optionsPage h4 img{
+  opacity: 0;
   transition: opacity 1s;
 }
 #rangeDisplay {
@@ -133,6 +134,7 @@ button:focus {outline:0;}
 
 #fall{
   transform:translate(0,-7px);
+
 }
 
 @media only screen and (max-width: 972px){
