@@ -116,26 +116,7 @@ $(document).on("ready",function(){
   window.setInterval(function(){
     randomColor();
   },3000)
-  
-  $(".pfooter").hover(
-    function(){
-      $(".footer").css("transform","translate(0,0px)");
-      $("#options").css("border","2px dashed RGBA(50,50,50,1)");
-      $("#options").css("color","RGBA(50,50,50,1)");
-      
-      //If first time, first time hovering over options, stop arrow
-      if (localStorage.getItem("firstTime") != "true"){
-        localStorage.setItem("firstTime","true");
-        clearInterval(arrowAnimation);
-        $("#downArrow").css("opacity","0");
-      }
-    },
-    function(){
-      $(".footer").css("transform","translate(0,30px)");
-      $("#options").css("border","2px dashed RGBA(50,50,50,0)");
-      $("#options").css("color","RGBA(50,50,50,0)");
-    }
-  );
+
   var tst = false;
   var timer;
   $("#options").on("click",function(){
@@ -193,7 +174,32 @@ $(document).on("ready",function(){
         $img.replaceWith($svg);
 
     }, 'xml');
+    
+    
+    //when mouse moves, if it moves to bottom part of page, do stuff
+    $(document).mousemove(function(e){
+      var C = [0,0]    
+      C[0] = e.pageX; 
+      C[1] = e.pageY; 
+      var height = window.innerHeight;
+      if (e.pageY >= height - 150){
+        $(".footer").css("transform","translate(0,0px)");
+        $("#options").css("border","2px dashed RGBA(50,50,50,1)");
+        $("#options").css("color","RGBA(50,50,50,1)");
 
+        //If first time, first time hovering over options, stop arrow
+        if (localStorage.getItem("firstTime") != "true"){
+          localStorage.setItem("firstTime","true");
+          clearInterval(arrowAnimation);
+          $("#downArrow").css("opacity","0");
+        }
+      }
+      else {
+        $(".footer").css("transform","translate(0,30px)");
+        $("#options").css("border","2px dashed RGBA(50,50,50,0)");
+        $("#options").css("color","RGBA(50,50,50,0)");
+      }
+    });
 });
   
 });

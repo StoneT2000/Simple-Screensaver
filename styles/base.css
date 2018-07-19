@@ -175,12 +175,13 @@ button:focus {outline:0;}
     transform:translate(0,0);
   }
   #optionsPage{
-    width:200px;
-    margin-left:-100px;
+    width:240px;
+    margin-left:-120px;
     left:50%;
+    
   }
   #optionsPage h4{
-    margin-left:0px;
+
   }
 }
 /* For when the options button intersects footer*/
@@ -195,6 +196,9 @@ button:focus {outline:0;}
     margin-left:-100px;
     left:50%;
   }
+  #optionsPage h4{
+    width:160px;
+  }
   
 }
 
@@ -206,9 +210,11 @@ button:focus {outline:0;}
   }
   #optionsPage h4{
     width:80px;
+    margin:10px;
   }
   #optionsPage {
     width:210px;
+
   }
   #maple {
     width:30px;
