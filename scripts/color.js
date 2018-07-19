@@ -10,11 +10,13 @@ var selectedIndex = 2;
 
 function clearDisplayColors(colorArray){
 
-    for (var i = 1;i <= colorArray.length;i++){
-      $("#color" + i).css("background-color","RGB(0,0,0,0)");
-    }
+  for (var i = 1;i <= colorArray.length;i++){
+    $("#color" + i).css("background-color","RGB(0,0,0,0)");
+  }
   $("#rangeDisplay").css("opacity","0");
 }
+
+//When document has loaded
 $(document).on("ready",function(){
   //Colors to be selected
   
@@ -22,6 +24,34 @@ $(document).on("ready",function(){
     $(".page").css("background-color",colors[selectedIndex][Math.round(Math.random(0,1) * colors[selectedIndex].length)]);
   }
   randomColor();
+  
+  //If first time user uses website, display arrow telling user to click bottom of page to see options button
+  var dist = 70;
+  var arrowAnimation;
+  if (localStorage.getItem("firstTime") != "true"){
+    
+    console.log("first time loading SimpleColors!")
+    
+    $("#downArrow").css("transform","translate(0," + 0 + "px)");
+    dist = 70;
+    arrowAnimation = window.setInterval(function(){
+      $("#downArrow").css("transform","translate(0," + dist + "px)");
+      if (dist == 70){
+        dist = 0;
+      }
+      else {
+        dist = 70;
+      }
+    },500)
+    
+    
+    
+  }
+  else {
+    $("#downArrow").css("display","none");
+  }
+  
+  
   
   //Delete old div and append new one with new colors
   function displayRange(colorArray){
@@ -92,6 +122,13 @@ $(document).on("ready",function(){
       $(".footer").css("transform","translate(0,0px)");
       $("#options").css("border","2px dashed RGBA(50,50,50,1)");
       $("#options").css("color","RGBA(50,50,50,1)");
+      
+      //If first time, first time hovering over options, stop arrow
+      if (localStorage.getItem("firstTime") != "true"){
+        localStorage.setItem("firstTime","true");
+        clearInterval(arrowAnimation);
+        $("#downArrow").css("opacity","0");
+      }
     },
     function(){
       $(".footer").css("transform","translate(0,30px)");
