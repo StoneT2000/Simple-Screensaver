@@ -131,9 +131,13 @@ button:focus {outline:0;}
 #optionsPage h4:hover{
 
 }
+#maple path{
+  fill: RGBA(255,255,255,0);
+  transition: fill 1s;
+}
 
 #fall{
-  transform:translate(0,-7px);
+  transform:translate(0,5px);
 
 }
 
@@ -171,6 +175,28 @@ button:focus {outline:0;}
     width:200px;
     margin-left:-100px;
     left:50%;
+  }
+  
+}
+
+/*For when option button intersects options buttons*/
+@media only screen and (max-height: 465px){
+  #optionsPage h4 i{
+    font-size:30px;
+    display: inline-block;
+  }
+  #optionsPage h4{
+    width:80px;
+  }
+  #optionsPage {
+    width:210px;
+  }
+  #maple {
+    width:30px;
+    height:30px;
+  }
+  #fall {
+    transform: translate(0,4px);
   }
   
 }

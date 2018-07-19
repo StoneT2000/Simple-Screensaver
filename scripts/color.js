@@ -9,7 +9,7 @@ var selectedIndex = 2;
 
 
 function clearDisplayColors(colorArray){
-    console.log("clear")
+
     for (var i = 1;i <= colorArray.length;i++){
       $("#color" + i).css("background-color","RGB(0,0,0,0)");
     }
@@ -27,7 +27,7 @@ $(document).on("ready",function(){
   function displayRange(colorArray){
     var myNode = document.getElementById("rangeDisplay");
     while (myNode.firstChild) {
-      console.log("remove")
+
         myNode.removeChild(myNode.firstChild);
     }
     for (var i = 1; i <= colorArray.length; i++){
@@ -108,8 +108,8 @@ $(document).on("ready",function(){
       $("#optionsPage h4").css("border","2px dashed RGBA(255,255,255,1)");
       $("#optionsPage h4").css("color","RGBA(255,255,255,1)");
       $("#optionsPage").css("z-index","10");
-      
-      $("#optionsPage h4 img").css("opacity","1");
+      $("#maple path").css("fill","RGBA(255,255,255,1)");
+      //$("#optionsPage h4 img").css("opacity","1");
       
       clearTimeout(timer);
       window.setTimeout(function(){
@@ -118,7 +118,8 @@ $(document).on("ready",function(){
     }
     else {
       tst = false;
-      $("#optionsPage h4 img").css("opacity","0");
+      //$("#optionsPage h4 img").css("opacity","0");
+      $("#maple path").css("fill","RGBA(255,255,255,0)");
       $("#optionsPage h4").css("border","2px dashed RGBA(255,255,255,0)");
       $("#optionsPage h4").css("color","RGBA(255,255,255,0)");
       clearTimeout(timer);
@@ -127,6 +128,36 @@ $(document).on("ready",function(){
       }, 1000);
     }
   });
+  
+  //From stackoverflow, the below function replaces each image with class .svg into a inline svg
+  jQuery('img.svg').each(function(){
+    var $img = jQuery(this);
+    var imgID = $img.attr('id');
+    var imgClass = $img.attr('class');
+    var imgURL = $img.attr('src');
+
+    jQuery.get(imgURL, function(data) {
+        // Get the SVG tag, ignore the rest
+        var $svg = jQuery(data).find('svg');
+
+        // Add replaced image's ID to the new SVG
+        if(typeof imgID !== 'undefined') {
+            $svg = $svg.attr('id', imgID);
+        }
+        // Add replaced image's classes to the new SVG
+        if(typeof imgClass !== 'undefined') {
+            $svg = $svg.attr('class', imgClass+' replaced-svg');
+        }
+
+        // Remove any invalid XML tags as per http://validator.w3.org
+        $svg = $svg.removeAttr('xmlns:a');
+
+        // Replace image with new SVG
+        $img.replaceWith($svg);
+
+    }, 'xml');
+
+});
   
 });
 function keyEvent(){
