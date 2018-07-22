@@ -4,4 +4,4 @@ A minimally designed site that acts a simple color screen saver changing colors 
 A working demo is provided here https://stonet2000.github.io/SimpleColors/
 
 ## Technical
-Created using HTML, jQuery, JS
+Created using HTML, jQuery, JS, CSS
