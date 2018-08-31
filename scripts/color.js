@@ -85,32 +85,6 @@ document.onreadystatechange = function () {
 
     var tst = false;
     var timer;
-    document.getElementById('options').addEventListener('click', function (){
-      if (tst == false) {
-        tst = true;
-        $("#optionsPage h4").css("display", "inline-block");
-        $("#optionsPage h4").css("border", "2px dashed RGBA(255,255,255,1)");
-        $("#optionsPage h4").css("color", "RGBA(255,255,255,1)");
-        $("#optionsPage").css("z-index", "10");
-        $("#maple path").css("fill", "RGBA(255,255,255,1)");
-        //$("#optionsPage h4 img").css("opacity","1");
-
-        clearTimeout(timer);
-        window.setTimeout(function () {
-
-        }, 1000);
-      } else {
-        tst = false;
-        //$("#optionsPage h4 img").css("opacity","0");
-        $("#maple path").css("fill", "RGBA(255,255,255,0)");
-        $("#optionsPage h4").css("border", "2px dashed RGBA(255,255,255,0)");
-        $("#optionsPage h4").css("color", "RGBA(255,255,255,0)");
-        clearTimeout(timer);
-        timer = window.setTimeout(function () {
-          $("#optionsPage").css("z-index", "0");
-        }, 1000);
-      }
-    });
     $("#options").on("click", function () {
       if (tst == false) {
         tst = true;
