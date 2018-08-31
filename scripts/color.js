@@ -104,7 +104,7 @@ $(document).ready(function(){
   //Rotate background colors
   window.setInterval(function(){
     randomColor();
-  },3000)
+  },10000)
 
   var tst = false;
   var timer;
