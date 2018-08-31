@@ -38,7 +38,7 @@ $(document).ready(function(){
     else {
       dist = 70;
     }
-  },500)
+  },600)
   
   
   
