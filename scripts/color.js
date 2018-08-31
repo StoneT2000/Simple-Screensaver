@@ -17,7 +17,7 @@ function clearDisplayColors(colorArray){
 }
 
 //When document has loaded
-$(document).on("ready",function(){
+$(document).ready(function(){
   //Colors to be selected
   
   function randomColor(){
@@ -28,28 +28,17 @@ $(document).on("ready",function(){
   //If first time user uses website, display arrow telling user to click bottom of page to see options button
   var dist = 70;
   var arrowAnimation;
-  if (localStorage.getItem("firstTime") != "true"){
-    
-    console.log("first time loading SimpleColors!")
-    
-    $("#downArrow").css("transform","translate(0," + 0 + "px)");
-    dist = 70;
-    arrowAnimation = window.setInterval(function(){
-      $("#downArrow").css("transform","translate(0," + dist + "px)");
-      if (dist == 70){
-        dist = 0;
-      }
-      else {
-        dist = 70;
-      }
-    },500)
-    
-    
-    
-  }
-  else {
-    $("#downArrow").css("display","none");
-  }
+  $("#downArrow").css("transform","translate(0," + 0 + "px)");
+  dist = 70;
+  arrowAnimation = window.setInterval(function(){
+    $("#downArrow").css("transform","translate(0," + dist + "px)");
+    if (dist == 70){
+      dist = 0;
+    }
+    else {
+      dist = 70;
+    }
+  },500)
   
   
   
@@ -186,12 +175,7 @@ $(document).on("ready",function(){
       $("#options").css("border","2px dashed RGBA(50,50,50,1)");
       $("#options").css("color","RGBA(50,50,50,1)");
 
-      //If first time, first time hovering over options, stop arrow
-      if (localStorage.getItem("firstTime") != "true"){
-        localStorage.setItem("firstTime","true");
-        clearInterval(arrowAnimation);
-        $("#downArrow").css("opacity","0");
-      }
+      $("#downArrow").css("opacity","0");
     }
     else {
       $(".footer").css("transform","translate(0,30px)");
