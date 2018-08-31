@@ -15,7 +15,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
   <!--Add additional scripts here-->
   
-  <script src="scripts/color.js?version=10"></script>
+  <script src="scripts/color.js?version=11"></script>
   
   <!-- Icons -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
@@ -36,14 +36,14 @@
     </div>
   </div>
   <div id="optionsPage">
-    <h4 id="spring"><i class="fab fa-pagelines"></i></h4>
-    <h4 id="summer"><i class="fas fa-sun"></i></h4>
+    <h4 id="spring" onmouseover="displayRange(springc)" onmouseout="clearDisplayColors(springc)"><i class="fab fa-pagelines"></i></h4>
+    <h4 id="summer" onmouseover="displayRange(summerc)" onmouseout="clearDisplayColors(summerc)"><i class="fas fa-sun"></i></h4>
     
-    <h4 id="fall" style="">
+    <h4 id="fall" onmouseover="displayRange(fallc)" onmouseout="clearDisplayColors(fallc)">
       <!--<img src="images/mapleleafwhite64.png" width="40">-->
       <img class="svg" id="maple" src="images/mapleleaf.svg">
     </h4>
-    <h4 id="winter"><i class="far fa-snowflake"></i></h4>
+    <h4 id="winter" onmouseover="displayRange(winterc)" onmouseout="clearDisplayColors(winterc)"><i class="far fa-snowflake"></i></h4>
   </div>
   <div class="afooter">
     <i id="downArrow" class="fas fa-long-arrow-alt-down"></i>
