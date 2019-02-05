@@ -10,7 +10,6 @@ body, html{
   height: 100%;
   color:#212529;
   -webkit-transition: background-color 1s;
-  -o-transition: background-color 1s;
   transition: background-color 1s;
   background-color:#fde74c;
   /*cursor:none;*/
@@ -19,7 +18,6 @@ body, html{
 .page{
   height:100%;
   -webkit-transition: background-color 1s;
-  -o-transition: background-color 1s;
   transition: background-color 1s;
   width:100%;
   z-index:1;
@@ -35,43 +33,40 @@ button:focus {outline:0;}
   height: 30px;
   bottom: 0px;
   margin-left:20px;
-  margin:none;
   z-index:5;
   text-align: left;
-  color:RGB(50,50,50);
-  -webkit-transition: transform 1s;
-  -moz-transition: transform 1s;
-  -ms-transition: transform 1s;
-  -o-transition: transform 1s;
+  margin: none;
+  color:rgb(52,58,64);
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
   transition: transform 1s;
-  
+  transition: transform 1s, -webkit-transform 1s;
   -webkit-transform: translate(0,30px);
-  -moz-transform: translate(0,30px);
-  -ms-transform: translate(0,30px);
-  -o-transform: translate(0,30px);
   transform: translate(0,30px);
 }
 .footer a{
-  color: RGB(50,50,50);
+  color: RGB(52,58,64);
   font-size: 20px;
+  line-height: 25px;
   margin-left: 5px;
 }
-.footer h6{
-  display: inline-block;
-  line-height: 12px;
-  margin-bottom: 0px;
-  margin-top:0px;
+.footer span{
+  display: inline;
   font-size: 12px;
   font-weight: 300;
-  -webkit-transform: translate(0,-3px);
-  -moz-transform: translate(0,-3px);
-  -ms-transform: translate(0,-3px);
-  -o-transform: translate(0,-3px);
-  transform: translate(0,-3px);
+  vertical-align: text-top;
 }
-.footer a:hover{
-  border-radius: 50%;
-  color: black;
+.octicon-mark-github, .octicon-mail{
+  fill: RGB(52,58,64);
+  -webkit-transition: fill 0.3s;
+  transition: fill 0.3s;
+}
+.octicon-mark-github:hover, .octicon-mail:hover{
+  fill: RGB(26,29,32);
+}
+svg {
+  overflow: hidden;
+  vertical-align: middle;
 }
 .pfooter {
   position: fixed;
@@ -85,9 +80,6 @@ button:focus {outline:0;}
   width: 100px;
   left:50%;
   -webkit-transform: translate(-50%,0);
-  -moz-transform: translate(-50%,0);
-  -ms-transform: translate(-50%,0);
-  -o-transform: translate(-50%,0);
   transform: translate(-50%,0);
   text-align: center;
   height:100px;
@@ -99,16 +91,13 @@ button:focus {outline:0;}
   font-size:70px;
   color:white;
   -webkit-transform: translate(0,70px);
-  -moz-transform: translate(0,70px);
-  -ms-transform: translate(0,70px);
-  -o-transform: translate(0,70px);
   transform: translate(0,70px);
   
   -webkit-transition:transform 1s, opacity 1s;
-  -moz-transition:transform 1s, opacity 1s;
-  -ms-transition:transform 1s, opacity 1s;
-  -o-transition:transform 1s, opacity 1s;
+  -webkit-transition:opacity 1s, -webkit-transform 1s;
+  transition:opacity 1s, -webkit-transform 1s;
   transition:transform 1s, opacity 1s;
+  transition:transform 1s, opacity 1s, -webkit-transform 1s;
   
   opacity: 1;
   
@@ -126,9 +115,6 @@ button:focus {outline:0;}
   color: RGBA(50,50,50,0);
 
   -webkit-transition: border 1s, color 1s;
-  -moz-transition: border 1s, color 1s;
-  -ms-transition: border 1s, color 1s;
-  -o-transition: border 1s, color 1s;
   transition: border 1s, color 1s;
 }
 
@@ -139,9 +125,6 @@ button:focus {outline:0;}
 #optionsPage {
   top:50%;
   -webkit-transform: translate(0,-50%);
-  -moz-transform: translate(0,-50%);
-  -ms-transform: translate(0,-50%);
-  -o-transform: translate(0,-50%);
   transform: translate(0,-50%);
   position: fixed;
   width: 100%;
@@ -163,9 +146,6 @@ button:focus {outline:0;}
   
   
   -webkit-transition: background-color 1s, color 1s, border, 1s;
-  -moz-transition: background-color 1s, color 1s, border, 1s;
-  -ms-transition: background-color 1s, color 1s, border, 1s;
-  -o-transition: background-color 1s, color 1s, border, 1s;
   transition: background-color 1s, color 1s, border, 1s;
 
   
@@ -179,17 +159,11 @@ button:focus {outline:0;}
   opacity: 0;
   
   -webkit-transition: opacity 1s;
-  -moz-transition: opacity 1s;
-  -ms-transition: opacity 1s;
-  -o-transition: opacity 1s;
   transition: opacity 1s;
 }
 #rangeDisplay {
   opacity: 0;
   -webkit-transition: opacity 1s;
-  -moz-transition: opacity 1s;
-  -ms-transition: opacity 1s;
-  -o-transition: opacity 1s;
   transition: opacity 1s;
 }
 .dispC{
@@ -202,31 +176,25 @@ button:focus {outline:0;}
   padding:0;
   
   -webkit-transition: background-color 1s;
-  -moz-transition: background-color 1s;
-  -ms-transition: background-color 1s;
-  -o-transition: background-color 1s;
   transition: background-color 1s;
   
 }
 #optionsPage h4:hover{
 
 }
+#maple {
+    vertical-align:baseline !important;
+}
 #maple path{
   fill: RGBA(255,255,255,0);
   
   -webkit-transition: fill 1s;
-  -moz-transition: fill 1s;
-  -ms-transition: fill 1s;
-  -o-transition: fill 1s;
   transition: fill 1s;
 }
 
 #fall{
   
   -webkit-transform:translate(0,5px);
-  -moz-transform:translate(0,5px);
-  -ms-transform:translate(0,5px);
-  -o-transform:translate(0,5px);
   transform:translate(0,5px);
 
 }
@@ -245,9 +213,6 @@ button:focus {outline:0;}
   #fall{
     
     -webkit-transform:translate(0,0);
-    -moz-transform:translate(0,0);
-    -ms-transform:translate(0,0);
-    -o-transform:translate(0,0);
     transform:translate(0,0);
   }
   #optionsPage{
@@ -298,9 +263,6 @@ button:focus {outline:0;}
   }
   #fall {
     -webkit-transform: translate(0,4px);
-    -moz-transform: translate(0,4px);
-    -ms-transform: translate(0,4px);
-    -o-transform: translate(0,4px);
     transform: translate(0,4px);
   }
   
